@@ -1,0 +1,87 @@
+{
+	"name": "vmxpi-wsr",
+	"displayName": "vmxpi-wsr",
+	"description": "VMX Worldskills Robotics",
+	"icon": "resources/VMX_WSR_128.png",
+	"version": "1.0.0",
+	"engines": {
+		"vscode": "^1.41.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:vmxpi-wsr.updateWPILib",
+		"onCommand:vmxpi-wsr.setVMXPiTarget",
+		"onCommand:vmxpi-wsr.checkGradleStatus",
+		"onCommand:vmxpi-wsr.openCommandPalette"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "vmxpi-wsr.updateWPILib",
+				"title": "Update WPILib Version",
+				"category": "VMX WSR"
+			},
+			{
+				"command": "vmxpi-wsr.setVMXPiTarget",
+				"title": "Set the deploy target to VMX (from RoboRIO)",
+				"category": "VMX WSR"
+			},
+			{
+				"command": "vmxpi-wsr.checkGradleStatus",
+				"title": "Verify the Project's build.gradle file",
+				"category": "VMX WSR"
+			},
+			{
+				"command": "vmxpi-wsr.openCommandPalette",
+				"title": "Open VMX WSR Command Palette",
+				"category": "VMX WSR",
+				"icon": "resources/VMX_WSR_128.png"
+			}
+		],
+		"menus": {
+			"commandPalette": [
+				{
+					"command": "vmxpi-wsr.openCommandPalette",
+					"when": "false"
+				}
+			],
+			"editor/title": [
+				{
+					"command": "vmxpi-wsr.openCommandPalette",
+					"group": "navigation@9"
+				}
+			]
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile && npm run lint",
+		"lint": "eslint src --ext ts",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/glob": "^7.1.3",
+		"@types/mocha": "^8.0.4",
+		"@types/node": "^12.11.7",
+		"@types/node-fetch": "^2.5.8",
+		"@types/vscode": "^1.41.0",
+		"@types/xml2js": "^0.4.8",
+		"@typescript-eslint/eslint-plugin": "^4.14.1",
+		"@typescript-eslint/parser": "^4.14.1",
+		"eslint": "^7.19.0",
+		"glob": "^7.1.6",
+		"mocha": "^8.2.1",
+		"typescript": "^4.1.3",
+		"vscode-test": "^1.5.0"
+	},
+	"dependencies": {
+		"node-fetch": "^2.6.0",
+		"tsc": "^1.20150623.0",
+		"xml2js": "^0.4.23"
+	}
+}
