@@ -29,7 +29,7 @@ export function activate(context: vscode.ExtensionContext) {
             const buildGradleFile = await readFileAsync(buildGradlePath, 'utf8');
     
             //Replace the GradleRIO plugin line
-            var newgFile = buildGradleFile.replace(getPluginRegex(), `$1${'com.studica.wsr'}$3${'run.wpilib.update'}$5`);
+            var newgFile = buildGradleFile.replace(getPluginRegex(), `$1${'com.kauailabs.wsr'}$3${'run.wpilib.update'}$5`);
             
             newgFile = newgFile.replace('roboRIO', 'vmxpi');
             newgFile = newgFile.replace(/wpi.platforms.roborio/g, 'wpi.platforms.raspbian');

@@ -9,7 +9,7 @@ let nonUserCall = false;
 
 
 function getGradleRioVMXRegex() {
-	return /(id\s*?[\"|\']com\.studica\.wsr\.GradleRIO[\"|\'].*?version\s*?[\"|\'])(.+?)([\"|\'])/g;
+	return /(id\s*?[\"|\']com\.kauailabs\.wsr\.GradleRIO[\"|\'].*?version\s*?[\"|\'])(.+?)([\"|\'])/g;
 }
 
 function getGradleRioRegex() {
@@ -48,7 +48,7 @@ export async function run(nonUserCalled: boolean) {
 
 async function getLatestGradleRIOVersion() {
 
-	const metaDataUrl = 'https://plugins.gradle.org/m2/com.studica.wsr.GradleRIO/com.studica.wsr.GradleRIO.gradle.plugin/maven-metadata.xml';
+	const metaDataUrl = 'https://plugins.gradle.org/m2/com.kauailabs.wsr.GradleRIO/com.kauailabs.wsr.GradleRIO.gradle.plugin/maven-metadata.xml';
     try {
       const response = await fetch.default(metaDataUrl, {
         timeout: 5000,

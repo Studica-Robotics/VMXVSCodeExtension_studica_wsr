@@ -16,7 +16,7 @@ function getPluginRegex() {
     return /(id\s*?[\"|\'])(.+?)(\.GradleRIO[\"|\'].*?version\s*?[\"|\'])(.+?)([\"|\'])/g;
 }
 function getGradleRioVMXRegex() {
-    return /(id\s*?[\"|\']com\.studica\.wsr\.GradleRIO[\"|\'].*?version\s*?[\"|\'])(.+?)([\"|\'])/g;
+    return /(id\s*?[\"|\']com\.kauailabs\.wsr\.GradleRIO[\"|\'].*?version\s*?[\"|\'])(.+?)([\"|\'])/g;
 }
 function getGradleRioRegex() {
     return /(id\s*?[\"|\']edu\.wpi\.first\.GradleRIO[\"|\'].*?version\s*?[\"|\'])(.+?)([\"|\'])/g;
@@ -85,7 +85,7 @@ function activate(context) {
 exports.activate = activate;
 //0 = Line not found. 1 = VMX Configuration set. 2 = RoboRIO Configuration.
 function checkPluginLine(buildGradle) {
-    if (buildGradle.includes('id \"com.studica.wsr.GradleRIO\" version ')) {
+    if (buildGradle.includes('id \"com.kauailabs.wsr.GradleRIO\" version ')) {
         return 1;
     }
     else if (buildGradle.includes('id \"edu.wpi.first.GradleRIO\" version ')) {

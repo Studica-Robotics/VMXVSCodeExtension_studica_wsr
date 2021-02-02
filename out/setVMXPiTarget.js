@@ -28,7 +28,7 @@ function activate(context) {
             const buildGradlePath = (vscode.workspace.rootPath + '/build.gradle');
             const buildGradleFile = yield utilities_1.readFileAsync(buildGradlePath, 'utf8');
             //Replace the GradleRIO plugin line
-            var newgFile = buildGradleFile.replace(getPluginRegex(), `$1${'com.studica.wsr'}$3${'run.wpilib.update'}$5`);
+            var newgFile = buildGradleFile.replace(getPluginRegex(), `$1${'com.kauailabs.wsr'}$3${'run.wpilib.update'}$5`);
             newgFile = newgFile.replace('roboRIO', 'vmxpi');
             newgFile = newgFile.replace(/wpi.platforms.roborio/g, 'wpi.platforms.raspbian');
             yield utilities_1.writeFileAsync(buildGradlePath, newgFile);

@@ -1,9 +1,14 @@
 {
 	"name": "vmxpi-wsr",
-	"displayName": "vmxpi-wsr",
-	"description": "VMX Worldskills Robotics",
+	"displayName": "WSR VMX",
+	"description": "WSR (Worldskills Robotics) VMX Extension",
 	"icon": "resources/VMX_WSR_128.png",
+	"publisher": "Kauailabs",
 	"version": "1.0.0",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/kauailabs/VMXVSCodeExtension_studica_wsr"
+	},
 	"engines": {
 		"vscode": "^1.41.0"
 	},
